@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vaccination Administration Data</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="vaccine.css">
+    </head>
+    <body>
+        <header>
+            <h1>Adding A New Record</h1>
+        </header>
+        <form action="login.jsp">
+            <input type="submit" value="Log Out"/>
+        </form>
+        <form id="patient" action="Vaccine.jsp" method="post">
+            <fieldset id="Info1">
+            <legend>1st Form:</legend>
+            <h3 id='paInfo'>Patient Information</h3>
+            <div>
+              <label for="rID">* Record ID:</label>
+              <input type="number" name="rID" id="rID" placeholder="X" required>
+            </div>
+            <div>
+              <label for="ID">* Patient ID:</label>
+              <input type="number" name="ID" id="ID" placeholder="0XXXXX" required>
+            </div>
+            <div>
+              <label for="fname">* First Name:</label>
+              <input type="text" name="fname" id="fname" required>
+            </div>
+            <div>
+              <label for="mname"> Middle Name:</label>
+              <input type="text" name="mname" id="mname">
+            </div>
+            <div>
+              <label for="lname">* Last Name:</label>
+              <input type="text" name="lname" id="lname" required>
+            </div>
+            <div>
+              <label for="birth">* Date of Birth:</label>
+              <input type="date" name="birth" id="birth" required>
+            </div>
+            <div>
+              <label for="street1">* Street 1:</label>
+              <input type="text" name="street1" id="street1" required />
+            </div>
+            <div>
+              <label for="street2">Street 2:</label>
+              <input type="text" name="street2" id="street2" />
+            </div>
+            <div>
+              <label for="city">* City:</label>
+              <input type="text" name="city" id="city" required />
+            </div>
+            <div>
+             <label for="state">* State:</label>
+             <input type="text" name="state" id="state" required />
+            </div>
+            <div>
+             <label for="zip">* Zip Code:</label>
+             <input type="number" name="zip" id="zip" placeholder="nnnnn" required />
+            </div>
+            <div>
+                <label>* Gender:</label>
+                <input type="radio"  name="gender" value="Male">Male
+                <input type="radio"  name="gender" value="Female">Female
+                <input type="radio"  name="gender" value="Unknown">Unknown
+            </div>
+            <div>
+                <label>* Race (select all that apply)</label><br>
+                <input type="checkbox" name="race" value="American Indian/Alaska Native">American Indian/Alaska Native<br>     
+                <input type="checkbox" name="race" value="White">White<br>      
+                <input type="checkbox" name="race" value="Asian">Asian<br>
+                <input type="checkbox" name="race" value="Black/African American">Black/African American<br>
+                <input type="checkbox" name="race" value="Native Hawaiian/Pacific Islander">Native Hawaiian/Pacific Islander<br>
+                <input type="checkbox" name="race" value="Other Race">Other Race<br>
+                <input type="checkbox" name="race" value="Unknown">Unknown
+            </div>
+            <div>
+                <label>* Ethnicity </label><br>
+                <input type="radio" name="ethnicity" value="Hispanic or Latino">Hispanic or Latino<br>      
+                <input type="radio" name="ethnicity" value="Not Hispanic or Latino">Not Hispanic or Latino<br>
+                <input type="radio" name="ethnicity" value="Unknown">Unknown<br>   
+            </div>
+           </fieldset>
+            <fieldset id="Info2">
+                <legend>2nd Form:</legend>
+                <h3 id='insurance'>Insurance Information</h3>
+                <div>
+                    <label>Dose patient carry insurance?</label>
+                    <input type="radio"  name="Pinsu" value="Yes" onChange="insuselect()">Yes
+                    <input type="radio"  name="Pinsu" value="No" onChange="insuselect()" checked>No
+                    <br>
+                    <label for="insuholder">Primary Insurance holder:</label>
+                    <input type="text" name="insuholder" id="insuholder" disabled>
+                    <br>
+                    <label for="insurer">Insurer:</label>
+                    <input type="text" name="insurer" id="insurer" disabled>
+                    <br>
+                    <label for="idnum">Group/Individual ID number:</label>
+                    <input type="text" name="idnum" id="idnum" disabled>
+                    <script>
+                      function insuselect() {
+                      var result = document.querySelector('input[name="Pinsu"]:checked').value;
+                      if (result === "Yes") {
+                        document.getElementById("insuholder").removeAttribute('disabled');
+                        document.getElementById("insurer").removeAttribute('disabled');
+                        document.getElementById("idnum").removeAttribute('disabled');
+                      } else {
+                        document.getElementById("insuholder").setAttribute('disabled', true);
+                        document.getElementById("insurer").setAttribute('disabled', true);
+                        document.getElementById("idnum").setAttribute('disabled', true);
+                      }
+                      }
+                   </script>
+                </div>
+                <h3 id='provider'>Provider Information:</h3>
+                   <div>
+                    <label for="pID">* Provider ID:</label>
+                    <input type="number" name="pID" id="pID" placeholder="0XXXXX" required>
+                  </div>
+                  <div>
+                    <label for="pfname">* First Name:</label>
+                    <input type="text" name="pfname" id="pfname" required>
+                  </div>
+                  <div>
+                   <label for="pmname"> Middle Name:</label>
+                   <input type="text" name="pmname" id="pmname">
+                  </div>
+                  <div>
+                   <label for="plname">* Last Name:</label>
+                   <input type="text" name="plname" id="plname" required>
+                  </div>
+                  <div>
+                    <label for="pstreet1">* Street 1:</label>
+                    <input type="text" name="pstreet1" id="pstreet1" required />
+                  </div>
+                  <div>
+                    <label for="pstreet2">Street 2:</label>
+                    <input type="text" name="pstreet2" id="pstreet2" />
+                  </div>
+                  <div>
+                    <label for="pcity">* City:</label>
+                    <input type="text" name="pcity" id="pcity" required />
+                  </div>
+                  <div>
+                    <label for="pstate">* State:</label>
+                    <input type="text" name="pstate" id="pstate" required />
+                  </div>
+                   <div>
+                    <label for="pzip">* Zip Code:</label>
+                    <input type="number" name="pzip" id="pzip" placeholder="nnnnn" required />
+                  </div>
+                <h3 id='site'>Administration Information:</h3>
+                    <div>
+                      <label for="aname">* The Administration Name:</label>
+                      <input type="text" name="aname" id="aname" required />
+                    </div>
+                    <div>
+                      <label for="astreet1">* Street 1:</label>
+                      <input type="text" name="astreet1" id="astreet1" required />
+                    </div>
+                    <div>
+                      <label for="astreet2">Street 2:</label>
+                      <input type="text" name="astreet2" id="astreet2" />
+                    </div>
+                    <div>
+                      <label for="acity">* City:</label>
+                      <input type="text" name="acity" id="acity" required />
+                    </div>
+                    <div>
+                      <label for="astate">* State:</label>
+                      <input type="text" name="astate" id="astate" required />
+                    </div>
+                    <div>
+                       <label for="azip">* Zip Code:</label>
+                       <input type="number" name="azip" id="azip" placeholder="nnnnn" required />
+                    </div>
+        </fieldset>
+        <fieldset id="Info3">
+                <legend>3rd Form:</legend>
+                <h3 id='vaccine'>Vaccination Information</h3>
+                <div>
+                  <label for="Type">Vaccine Type:</label>
+                  <input type="text" name="Type" id="Type">
+                </div>
+                
+                <div>
+                  <label for="Prod">CVX code:</label>
+                  <input type="text" name="Prod" id="Prod">
+                </div>
+                
+                <div>
+                  <label for="Manu">Manufacturer:</label>
+                  <input type="text" name="Manu" id="Manu">
+                </div>
+                
+                <div>
+                  <label for="Lot">Lot Number:</label>
+                  <input type="text" name="Lot" id="Lot" placeholder="AA0000">
+                </div>
+                
+                <div>
+                  <label for="df">Expiration Date:</label>
+                  <input type="date" name="df" id="df">
+                </div>
+                
+                <div>
+                  <label>Dose Number:</label>
+                  <input type="radio" name="Dose" value="1st Dose">1st Dose
+                  <input type="radio" name="Dose" value="2st Dose">2st Dose
+                  <input type="radio" name="Dose" value="2st Dose">3rd Dose  
+                </div>
+                
+                <div>
+                    <label>Administration Site:</label>
+                    <input type="radio" name="Site" value="Left Arm">Left Arm
+                    <input type="radio" name="Site" value="Right Arm">Right Arm<br>
+                    <label>(Lower Extremity)</label>
+                    <input type="radio" name="Site" value="Left(Lower Extremity)">Left
+                    <input type="radio" name="Site" value="Right(Lower Extremity)">Right<br>
+                </div>
+                
+                <div>
+                  <label for="sdf">Date Administered:</label>
+                  <input type="date" name="sdf" id="sdf">
+                </div>
+  
+                 <div>
+                  <label for="waste">Number of Dose Wasted:</label>
+                  <input type="text" name="waste" id="waste">
+                </div>
+                
+                <div>
+                  <label for="Route">Administration Route:</label>
+                  <input type="text" name="Route" id="Route">
+                </div>
+                
+                <div>
+                  <label>* Missed Appointment:</label>
+                  <input type="radio"  name="Missed" value="Yes">Yes
+                  <input type="radio"  name="Missed" value="No">No
+                </div>
+                
+                <div>
+                  <label>* Comorbidity:</label>
+                  <input type="radio"  name="Como" value="Yes">Yes
+                  <input type="radio"  name="Como" value="No">No
+                </div>
+                
+                <div>
+                    <label>* Refused Vaccination:</label><br>
+                  <input type="radio" name="refvac" value="No" onChange="selected()" checked>NO<br>
+                  <input type="radio" name="refvac" value="Yes" onChange="selected()">YES
+                  <input type="text" name="refrea" id="refrea" placeholder="Reason:" disabled><br>
+                  <script>
+                      function selected() {
+                      var result = document.querySelector('input[name="refvac"]:checked').value;
+                      if (result === "Yes") {
+                        document.getElementById("refrea").removeAttribute('disabled');
+                      } else {
+                        document.getElementById("refrea").setAttribute('disabled', true);
+                      }
+                      }
+                  </script>
+                </div>
+                
+                <div>
+                  <label for="vacci">Vaccinator:</label>
+                  <input type="text" name="vacci" id="vacci">
+                </div>
+                
+                <div>
+                  <label>* Received EUA Fact Sheet for Recipients:</label>
+                  <input type="radio"  name="eua" value="Yes">Yes
+                  <input type="radio"  name="eua" value="No">No
+                </div>
+                
+            </fieldset>
+            <div id="buttons">
+               <input type="submit" value="Submit">
+               <input type="reset" value="Reset">
+            </div>
+        </form>
+    </body>
+</html>
