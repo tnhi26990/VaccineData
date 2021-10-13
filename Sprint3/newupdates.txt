@@ -1,0 +1,6 @@
+Tran Nhi
++ Setting the current date in the Date Administered field
++ Adding the default values to the Vaccine Type field, the Administration Route field and the Lot Number field
++ Adding the "Go Back" button in a JSP page
++ Adding a drop-down menu showing a list of manufacturers
++ Showing errors on the same page
