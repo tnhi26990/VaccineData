@@ -4,3 +4,6 @@ Tran Nhi
 + Adding the "Go Back" button in a JSP page
 + Adding a drop-down menu showing a list of manufacturers
 + Showing errors on the same page
++ Moving all the provider fields up so that the provider will need to enter the administration info first
++ Adding a new label ("Does the provider have the same address?") and two radio buttons (Yes and No)
++ The provider's address is filled out automatically if the "Yes" radio button is clicked
