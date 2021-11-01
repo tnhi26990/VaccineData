@@ -1,0 +1,5 @@
+I removed the Record ID field and the Patient ID field in the Patient form
+The patient table in the database will still have a Record ID column, which is an auto-increment column
+The application will save the PATIENT data to the database after the forms are submitted
+I also include a SQL script. When you execute it, a VaccinaData schema will be created
+My MYSQL root password is sesame. If you have a different password, you need to change it in order to save data to your database 
