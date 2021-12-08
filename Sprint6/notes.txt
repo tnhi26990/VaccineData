@@ -1,1 +1,5 @@
-
+Adding a navigation bar, which has five menu items (Main Page, New Patient, Existing Patient, Retrieve Data, and Log Out)
+Vacdbslogin is a SQL script for the login page
+When providers log in to their accounts, they will need to complete the form on the main page, getting the provider information and vaccination site information
+The New Patient page will be used to add records for new patients only
+The Existing Patient page will be used to add records of the second dose and/or third dose
