@@ -1,0 +1,6 @@
+Add the update data functionality
+Add the URL to report adverse reactions to VAERS
+Make changes to the vaccination database so the foreign key constraints are disabled when we update or delete records.
+Please download all three files
+The default username is user1
+The default password is also user1
